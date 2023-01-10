@@ -28,3 +28,9 @@
   align-items: flex-start;
   justify-content: space-around;
 }
+a {
+  text-decoration: none;
+}
+.activeNav {
+  text-decoration: underline;
+}

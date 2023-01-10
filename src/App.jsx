@@ -1,7 +1,7 @@
 import AlertButton from "./components/AlertButton";
 import "./App.css";
 import logo from "./assets/logo.png";
-import { Link } from "react-router-dom";
+import { Link, NavLink, useMatch } from "react-router-dom";
 
 function App() {
   const pathImg =
@@ -10,30 +10,69 @@ function App() {
     <div className="App">
       <header className="App-header">
         <div className="buttonApp1">
-          <Link to="/">
+          <Link to="/" className={useMatch("/") ? "activeNav" : null}>
             <img src={pathImg} alt="logo" />
           </Link>
-          <Link to="/">
+          {/* <Link to="/">
             <img src="logo.png" alt="logo" />
           </Link>
           <Link to="/">
             <img src={logo} alt="logo" />
-          </Link>
+          </Link> */}
           <div>
-            <Link to="/a">A</Link>
-            <Link to="/b" className="letra">
+            <Link to="/a" className={useMatch("/a") ? "activeNav" : null}>
+              A
+            </Link>
+            <Link to="/b" className={useMatch("/b") ? "activeNav" : null}>
               B
             </Link>
           </div>
         </div>
-        <div className="buttonApp2">
-          <Link to="/">APP</Link>
-          <a href="/" className="buttonApp">
-            APP
-          </a>
+      </header>
+
+      <header className="App-header">
+        <div className="buttonApp1">
+          <NavLink
+            to="/"
+            className={({ isActive }) => {
+              return isActive ? "activeNav" : null;
+            }}
+          >
+            <img src={pathImg} alt="logo" />
+          </NavLink>
+          {/* <Link to="/">
+            <img src="logo.png" alt="logo" />
+          </Link>
+          <Link to="/">
+            <img src={logo} alt="logo" />
+          </Link> */}
+          <div>
+            <NavLink
+              to="/a"
+              className={({ isActive }) => {
+                return isActive ? "activeNav" : null;
+              }}
+            >
+              A
+            </NavLink>
+            <NavLink
+              to="/b"
+              className={({ isActive }) => {
+                return isActive ? "activeNav" : null;
+              }}
+            >
+              B
+            </NavLink>
+          </div>
         </div>
       </header>
 
+      <div className="buttonApp2">
+        <Link to="/">APP</Link>
+        <a href="/" className="buttonApp">
+          APP
+        </a>
+      </div>
       <AlertButton />
     </div>
   );
