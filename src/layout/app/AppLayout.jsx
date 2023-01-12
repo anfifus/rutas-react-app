@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, Outlet } from "react-router-dom";
 const pathImg =
   "https://timingapp.com/cdn-cgi/image/format=auto,width=256/img/app-icons/com.tinyspeck.slackmacgap/icon_512x512_2x.png";
 
@@ -45,6 +45,9 @@ function AppLayout() {
             <a href="/" className="buttonApp">
               APP
             </a>
+          </div>
+          <div>
+            <Outlet></Outlet>
           </div>
         </div>
       </header>

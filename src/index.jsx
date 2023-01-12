@@ -5,9 +5,15 @@ import Home from "./pages/home/Home";
 import A from "./pages/a/A";
 import B from "./pages/b/B";
 import reportWebVitals from "./reportWebVitals";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  RouterProvider,
+  Route,
+} from "react-router-dom";
+import AppLayout from "./layout/app/AppLayout";
 
-const router = createBrowserRouter([
+/* const router = createBrowserRouter([
   {
     path: "/",
     element: <Home />,
@@ -20,7 +26,16 @@ const router = createBrowserRouter([
     path: "/b",
     element: <B />,
   },
-]);
+]); */
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route element={<AppLayout />}>
+      <Route path="/" element={<Home />}></Route>
+      <Route path="/a" element={<A />}></Route>
+      <Route path="/b" element={<B />}></Route>
+    </Route>
+  )
+);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

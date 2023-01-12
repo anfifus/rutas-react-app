@@ -3,11 +3,11 @@ import "./Home.css";
 /* import logo from "./assets/logo.png";
  */
 function Home() {
-  <h1>Home</h1>;
   /*   const pathImg =
     "https://timingapp.com/cdn-cgi/image/format=auto,width=256/img/app-icons/com.tinyspeck.slackmacgap/icon_512x512_2x.png";
  */ return (
     <>
+      <h1>Home</h1>;
       {/*  <header className="App-header">
         <div className="buttonApp1">
           <Link to="/" className={useMatch("/") ? "activeNav" : null}>
@@ -29,7 +29,6 @@ function Home() {
           </div>
         </div>
       </header> */}
-
       <AlertButton />
     </>
   );
