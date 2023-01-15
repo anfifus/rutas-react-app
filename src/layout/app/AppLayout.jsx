@@ -46,7 +46,6 @@ function AppLayout() {
               APP
             </a>
           </div>
-<<<<<<< HEAD
         </div>
       </header>
       <div >
@@ -54,13 +53,6 @@ function AppLayout() {
       </div>
 
 
-=======
-          <div>
-            <Outlet></Outlet>
-          </div>
-        </div>
-      </header>
->>>>>>> 4c10a561834cc4e95abe4d708a215aafbbfddbd6
     </div>
   );
 }
