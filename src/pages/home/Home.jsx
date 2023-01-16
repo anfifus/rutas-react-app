@@ -1,4 +1,6 @@
 import AlertButton from "../../components/AlertButton";
+import Button from "@mui/material/Button";
+import Info from "@mui/icons-material";
 import "./Home.css";
 /* import logo from "./assets/logo.png";
  */
@@ -7,7 +9,7 @@ function Home() {
     "https://timingapp.com/cdn-cgi/image/format=auto,width=256/img/app-icons/com.tinyspeck.slackmacgap/icon_512x512_2x.png";
  */ return (
     <>
-      <h1>Home</h1>;
+      <h1>Home</h1>
       {/*  <header className="App-header">
         <div className="buttonApp1">
           <Link to="/" className={useMatch("/") ? "activeNav" : null}>
@@ -29,7 +31,10 @@ function Home() {
           </div>
         </div>
       </header> */}
-      <AlertButton />
+      {/* <Button variant="contained"> <AlertButton />  Alert Button</Button> */}
+      <Button startIcon={<Info />} variant="contained">
+        Alert Button
+      </Button>
     </>
   );
 }

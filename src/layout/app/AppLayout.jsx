@@ -38,6 +38,7 @@ function AppLayout() {
             >
               B
             </NavLink>
+            <NavLink to="/c">C</NavLink>
           </div>
 
           <div className="buttonApp2">
@@ -48,11 +49,9 @@ function AppLayout() {
           </div>
         </div>
       </header>
-      <div >
-          <Outlet></Outlet>
+      <div>
+        <Outlet></Outlet>
       </div>
-
-
     </div>
   );
 }

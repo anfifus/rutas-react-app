@@ -12,6 +12,7 @@ import {
   Route,
 } from "react-router-dom";
 import AppLayout from "./layout/app/AppLayout";
+import NotFound from "./pages/404/NotFound";
 
 /* const router = createBrowserRouter([
   {
@@ -27,15 +28,34 @@ import AppLayout from "./layout/app/AppLayout";
     element: <B />,
   },
 ]); */
-const router = createBrowserRouter(
+/* const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route element={<AppLayout />}>
+    <Route element={<AppLayout />} errorElement={<ErrorBoundary />}>
       <Route path="/" element={<Home />}></Route>
       <Route path="/a" element={<A />}></Route>
       <Route path="/b" element={<B />}></Route>
     </Route>
   )
+); */
+
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <>
+      <Route path="/" element={<AppLayout />}>
+        <Route index={true} element={<Home />} />
+        <Route path="a" element={<A />} />
+        <Route path="b" element={<B />} />
+      </Route>
+      <Route path="*" element={<NotFound />} />
+    </>
+  )
 );
+
+/* function ErrorBoundary() {
+  let error = useRouteError();
+  console.error(error);
+  return <div>Fatal Error!</div>;
+} */
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
